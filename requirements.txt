@@ -1,0 +1,7 @@
+discord.py
+python-dotenv
+pyfiglet
+aiohttp
+requests
+colorama
+googletrans==4.0.0rc1
