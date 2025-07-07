@@ -16,6 +16,18 @@ import asyncio
 import html
 import base64
 import re
+from aiohttp import web
+import threading
+
+async def handle(request):
+    return web.Response(text="I'm alive!")
+
+def keep_alive():
+    app = web.Application()
+    app.router.add_get("/", handle)
+    web.run_app(app, port=8080)
+
+threading.Thread(target=keep_alive).start()
 
 init(autoreset=True)
 
